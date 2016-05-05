@@ -1,0 +1,32 @@
+p{
+font-size:18;
+padding:20px;
+border-left:2px solid black;
+border-bottom:1px solid black;
+border-right:2px solid black;
+border-top: none;
+width: 320px;
+margin: 0;
+}
+
+.start{
+font-size:18;
+padding:20px;
+border-left:2px solid black;
+border-bottom:1px solid black;
+border-right:2px solid black;
+border-top: none;
+width: 320px;
+margin: 0;
+}
+
+.end{
+font-size:18;
+padding:20px;
+border-top:1px solid black;
+border-left:2px solid black;
+border-right:2px solid black;
+border-bottom: none;
+width: 320px;
+margin: 0;
+}
