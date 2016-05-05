@@ -1,0 +1,16 @@
+p{
+     width: 210px;
+     padding: 35px;
+     margin: 0px;
+     border: 5px solid black;
+     font-size: 30px;
+     color:rgb(11, 2, 173);
+     background-color:rgb(255, 255, 0);
+}
+  .box{
+    width: 290px;
+    padding: 20px;
+    margin: 10px;
+    color:rgb(220, 250, 0);
+    background-color:rgb(1, 127, 1);
+}
