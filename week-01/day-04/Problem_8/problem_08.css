@@ -1,0 +1,35 @@
+.top{
+font-size:18;
+padding:20px;
+border:2px solid black;
+width: 320px;
+margin: 0;
+background-image: url("duck.png");
+background-position: left;
+background-repeat: no-repeat;
+}
+
+.mid{
+font-size:18;
+padding:20px;
+border-left:2px solid black;
+border-right:2px solid black;
+border-bottom:none;
+border-top:none;
+width: 320px;
+margin: 0;
+background-image: url("duck.png");
+background-position:center;
+background-repeat: no-repeat;
+}
+
+.down{
+font-size:18;
+padding:20px;
+border:2px solid black;
+width: 320px;
+margin: 0;
+background-image: url("duck.png");
+background-position: right bottom;
+background-repeat: no-repeat;
+}
