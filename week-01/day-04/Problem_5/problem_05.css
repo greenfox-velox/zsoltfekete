@@ -1,0 +1,16 @@
+h1{
+color:rgb(0, 10, 254);
+}
+h2{
+color:rgb(239, 164, 23);
+}
+.red{
+color:red;
+}
+.blue{
+color:blue;
+}
+
+.list{
+list-style-type: square;
+}
