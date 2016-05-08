@@ -1,0 +1,169 @@
+h1{
+  background: url("anakin.png");
+  background-size: cover;
+  background-position: center top;
+  padding-top: 300px;
+  padding-bottom: 100px;
+  padding-left: 20%;
+  font-size: 2em;
+  font-family: 'Abril Fatface', cursive;
+  color: #222;
+  font-weight: normal;
+  margin:0 auto;
+  border: 0px;
+  width: 70%;
+  line-height:50px;
+}
+
+.Anakinskywalker{
+  margin-top: 0px;
+  padding-top:0px;
+  font-size:3em;
+  font-family: 'Abril Fatface', cursive;
+}
+
+.blackbox{
+  font-size: 40px;
+  font-weight: normal;
+  color:white;
+  font-family: 'Abril Fatface', cursive;
+  background-color:rgb(68, 68, 68);
+  width:800px;
+  padding-top:60px;
+  padding-bottom: 60px;
+  margin-top: 30px;
+  background-position: center;
+}
+
+section{
+  width:80%;
+  margin: 0 auto;
+  font-family: 'Josefin Sans', sans-serif;
+  color:#222;
+}
+
+.sec1_p{
+  padding-top: 30px;
+  font-size:22px;
+  padding-bottom:0px;
+}
+
+.sec1_ul{
+  padding-top: 30px;
+  font-size:16px;
+  padding-bottom: 30px;
+  letter-spacing: 1px;
+
+}
+
+.sec2_p{
+  padding-top:30px;
+  font-size:16px;
+  padding-bottom:30px;
+  margin: 0 auto;
+}
+
+.sec2_h2{
+  padding-top: 0px;
+  padding-bottom:0px;
+  margin: 0 auto;
+}
+
+.sec2_h3{
+  padding-top: 20px;
+  padding-bottom: 0px;
+  margin: 0 auto;
+}
+
+.job{
+  padding-top:0px;
+  font-size:22px;
+  padding-bottom:20px;
+  margin: 0 auto;
+  font-style: oblique;
+  }
+
+.sec3_h2{
+  padding-top: 0px;
+  padding-bottom:10px;
+  margin: 0 auto;
+}
+.sec3_h3{
+  padding-top:0px;
+  padding-bottom: 0px;
+  margin: 0 auto;
+}
+.sec3_ul{
+  padding-top: 10px;
+  font-size:22px;
+  padding-bottom: 10px;
+}
+
+.sec4_h2{
+    padding-top: 0px;
+    padding-bottom:10px;
+    margin: 0 auto;
+}
+.sec4_h3{
+    padding-top:0px;
+    padding-bottom: 0px;
+    margin: 0 auto;
+  }
+  .sec4_ul{
+    padding-top: 10px;
+    font-size:22px;
+    padding-bottom: 10px;
+}
+
+.line{
+    border-top:20px solid black;
+    border-width:medium;
+    width:800px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    background-position: center;
+  }
+
+.sec5_ul{
+    padding-top: 10px;
+    font-size:22px;
+    padding-bottom: 10px;
+}
+
+.sec5_h2{
+      padding-top: 0px;
+      padding-bottom:30px;
+      margin: 0 auto;
+  }
+
+.text{
+  width:50%;
+  margin: auto;
+}
+
+
+
+.text{
+  width:50%;
+  margin: auto;
+  font-family: 'Josefin Sans', sans-serif;
+  color:#222;
+}
+
+ul{
+  margin-top: 0px;
+  padding-top:25px;
+  font-size:20px;
+  padding-bottom:0px;
+  font-family: 'Josefin Sans', sans-serif;
+  color:#222;
+}
+
+li{
+  margin-top: 0px;
+  padding-top:1px;
+  font-size:20px;
+  font-family: 'Josefin Sans', sans-serif;
+  color:#222;
+}
