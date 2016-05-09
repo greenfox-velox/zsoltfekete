@@ -1,0 +1,47 @@
+body{
+
+  margin: 0 auto;
+}
+.box_azur{
+  background:#00FFFF;
+  height: 100px;
+}
+.mid{
+  position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+.box_orange{
+  background:#FEA500;
+  width: 100px;
+  height: 500px;
+
+}
+.box_red{
+  background:#FE0000;
+  width: 50%;
+  height: 500px;
+  position:relative;
+}
+
+.box_purple{
+  background:#81007F;
+    width: 100px;
+    height: 500px;
+
+}
+.box_black{
+  background:#000000;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top:430px;
+  right:20px;
+}
+
+.box_blue{
+  background:#0000FE;
+    display: block;
+    height: 100px;
+}
