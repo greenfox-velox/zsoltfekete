@@ -1,0 +1,76 @@
+.box{
+   max-width: 380px;
+   max-height: 550px;
+}
+p{
+  border-bottom: 2px solid black;
+  padding-bottom: 20px
+}
+img{
+padding: 2px
+}
+.duck1{
+float: left;
+}
+.duck2{
+float: right;
+}
+.message{
+   width: 250px;
+   height:150px;
+   border:2px solid black;
+   z-index: 1;
+   position: absolute;
+   border-radius: 10px;
+   left:100px;
+   top:100px;
+   background: white;
+}
+.Exit{
+border-radius: 10px;
+box-sizing: border-box;
+border: 1px solid black;
+padding: 3px;
+background-color: black;
+color: white;
+position: absolute;
+right:20px;
+top:-30px;
+}
+.First{
+text-align: center;
+color: red;
+}
+.Second{
+text-align: center;
+}
+.Button{
+position: relative;
+}
+.Ok{
+padding-top: 2px;
+padding-left:10px;
+padding-right: 10px;
+padding-bottom: 5px;
+width: 20px;
+background-color: grey;
+border: 1px solid black;
+border-radius: 10px;
+position: absolute;
+left: 130px;
+top: -28px;
+}
+
+.Cancel{
+padding-top: 2px;
+padding-left:10px;
+padding-right: 30px;
+padding-bottom: 5px;
+width: 20px;
+background-color: grey;
+border: 1px solid black;
+border-radius: 10px;
+position: absolute;
+left: 180px;
+top: -28px;
+}
