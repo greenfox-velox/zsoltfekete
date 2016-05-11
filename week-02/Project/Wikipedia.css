@@ -1,0 +1,84 @@
+body{
+  width: 100%;
+  display:flex;
+  font-family: sans-serif;
+}
+.Full_cointaner{
+width: 100%;
+}
+aside{
+  background:#FEA500;
+  width: 180px;
+  height: auto;
+}
+.Image_wikipedia{
+  width: 135px;
+  height: 155px;
+}
+header{
+  background:#00FFFF;
+  height: auto;
+  width: 100%;
+}
+.Header_cointaner{
+  width: 100%;
+  background:#FE0070;
+  display:flex;
+  justify-content: space-between;
+}
+.Login{
+  width: 100%;
+  background:#F77777;
+  margin:0;
+  border:0;
+}
+.Right_header_cointaner{
+  width: 100%;
+  background:#FE0070;
+}
+.Left_header_cointaner{
+  width: 100%;
+  background:#000F76;
+}
+main{
+  background:#FE0000;
+  width: 100%;
+}
+.Sec_heading{
+  background:#FE1111;
+}
+h1{
+  background:#222221;
+  margin:0;
+  border:0;
+}
+.Subheading{
+  background:#F55551;
+}
+.Alter{
+  background:#F13313;
+}
+.Introduction{
+  background:#444333;
+}
+.Infobox{
+  width: 200px;
+  height: 300px;
+  border: 1px solid #aaa;
+  border-spacing: 3px;
+  background-color: #f9f9f9;
+  color: black;
+  float: right;
+  margin-right: 300px;
+}
+.Contentbox{
+  background:#31A3A3;
+  width: 200px;
+  height: 300px;
+}
+
+
+footer{
+  background:#0000FE;
+  width: 100%;
+}
