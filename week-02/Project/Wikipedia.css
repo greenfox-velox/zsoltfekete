@@ -406,17 +406,13 @@ dd {
   font-size: 16px;
   line-height: 26px;
   margin:0px;
-  padding;0;px;
+  padding:0px;
 }
 
-.mainlist{
-    display: list-item;
-    list-style-image:url(./dot.svg);
+.main_list{
+  font-size: 14px;
+  list-style-image:
 }
-
-
-
-
 
 footer {
   background:#0000FE;
