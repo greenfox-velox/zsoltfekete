@@ -1,16 +1,20 @@
-h1{
-color:rgb(0, 10, 254);
+h1 {
+  color: rgb(0, 10, 254);
 }
+
 h2{
-color:rgb(239, 164, 23);
+  color: rgb(239, 164, 23);
 }
-.red{
-color:red;
+
+.red {
+  color:red;
 }
-.blue{
-color:blue;
+
+.blue {
+  color:blue;
+  list-style-type: square;
 }
 
 .list{
-list-style-type: square;
+  list-style-type: disc;
 }
