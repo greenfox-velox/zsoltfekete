@@ -1,14 +1,20 @@
 h1{
-color:green
+  color: green;
 }
-h2{
-color:green
-}
-.red{
-color:red
 
+h2{
+  color: green;
 }
+
+.red{
+  color:red;
+}
+
 .blue{
-color:blue;
-font-style: italic;
+  color: blue;
+  font-style: italic;
+}
+
+pre{
+  margin-left: -45px;
 }
