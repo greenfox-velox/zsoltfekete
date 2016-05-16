@@ -1,25 +1,21 @@
-.box{
+.box {
    max-width: 380px;
    max-height: 550px;
-
 }
 
-p{
+p {
   border-bottom: 2px solid black;
-  padding-bottom: 20px
-
-}
-img{
-padding: 2px
+  padding-bottom: 20px;
 }
 
+img {
+padding: 2px;
+}
 
-
-
-
-.duck1{
+.duck1 {
 float: left;
 }
-.duck2{
+
+.duck2 {
 float: right;
 }
