@@ -31,7 +31,7 @@
            </div>
            <p for="Brand"><span class="Purpleheader">Milyen márkát szertesz?</span></p><br>
            <div class="Column">
-             <div class="FirstColumn">
+             <div class="firstcolumn">
                <input type="checkbox" id="Brand1" value="Adidas">
                <label for="Brand1">Adidas</label><br>
                <input type="checkbox" id="Brand3" value="Apple">
@@ -43,7 +43,7 @@
                <input type="checkbox" id="Brand9" value="Nike">
                <label for="Brand9">Nike</label><br>
              </div>
-             <div class="SecondColumn">
+             <div class="secondcolumn">
                <input type="checkbox" id="Brand2" value="Opel">
                <label for="Brand2">Opel</label><br>
                <input type="checkbox" id="Brand4" value="Ray-Ban">
@@ -83,9 +83,10 @@
           <label for="msg"><span class="Purpleheader">Bemutatkozás</span><span class="star">*</span></</label><br>
           <textarea id="Msg" rows="5" required placeholder"Írj magadról pár mondatot!" ></textarea>
         </div>
-        <div class="File">
-          <label for="File" ><span class="Purpleheader">CV Feltöltése</span></label><br>
-          <input type="file" id="File"><br>
+        <div class="upload">
+          <label for="file" ><span class="Purpleheader">CV Feltöltése</span></label><br>
+          <input type="file" class="file-upload"/>
+          <input type="button" id="file" value="FILE KIVÁLASZTÁSA" onclick="document.getElementById('file').click();" />
         </div>
         <div class="Condition">
           <input type="checkbox" id="Condition" value="ok">

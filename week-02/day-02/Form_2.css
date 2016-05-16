@@ -7,7 +7,8 @@
   margin: 0 auto;
   margin-top: 50px;
 }
-.Form{
+
+.Form {
   padding-left: 75px;
   padding-right: 75px;
   padding-top: 40px;
@@ -15,21 +16,22 @@
   font-family: helvetica;
   font-size: 12px;
   color: #504065;
-
-
 }
-.Mid{
+
+.Mid {
   width:100%;
   display: flex;
   justify-content: space-between;
-  }
+}
+
 .star{
   color: red;
   font-weight:bold;
-  }
+}
+
 .Purpleheader{
-    font-weight:bold;
-  }
+  font-weight:bold;
+}
 
 .Heading1{
   font-size: 18px;
@@ -37,10 +39,12 @@
   color:#4C3C60;
   padding-bottom: 30px;
 }
+
 .Info{
   width: 50%;
   padding-right: 10px;
 }
+
 .Heading2{
   height: 30px;
   width:100%;
@@ -50,87 +54,65 @@
   font-weight: 100;
   background-color:#958B97;
   color:#FFFFFF;
-
 }
+
 .Name{
   width: 100%;
   height: auto;
   padding-top:10px;
 }
+
 #Name{
   width: 100%;
   height: 30px;
   margin-top: 8px;
   margin-bottom: 14px;
 }
+
 .Birth_Gender{
   display: flex;
   justify-content: space-between;
-  width: 100%
+  width: 100%;
 }
-.Birth{
-  width: 50%;
-  height: auto;
-}
-#Birth{
-  width: 60px;
-  height: 30px;
-  margin-top: 8px;
-  margin-bottom: 14px;
-  }
-.Gender{
+
+.Birth {
   width: 50%;
   height: auto;
 }
 
-.Gender_option{
+#Birth {
+  width: 60px;
+  height: 30px;
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
+.Gender {
+  width: 50%;
+  height: auto;
+}
+
+.Gender_option {
   margin-top: 8px;
   height: 30px;
-  padding:10px;  
+  padding:10px;
 }
-.Column{
+
+.Column {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;
 }
-#Brand1{
+
+#Brand1, #Brand2, #Brand3, #Brand4, #Brand5, #Brand6, #Brand7, #Brand8, #Brand9, #Brand10 {
   margin-bottom:8px;
-}
-#Brand2{
-  margin-bottom:8px;
-}
-#Brand3{
-  margin-bottom:8px;
-}
-#Brand4{
-  margin-bottom:8px;
-}
-#Brand5{
-  margin-bottom:8px;
-}
-#Brand6{
-  margin-bottom:8px;
-}
-#Brand7{
-  margin-bottom:8px;
-}
-#Brand8{
-  margin-bottom:8px;
-}
-#Brand9{
-  margin-bottom:8px;
-}
-#Brand9{
-  margin-bottom:20px;
-}
-#Brand10{
-  margin-bottom:20px;
 }
 
 .Contact{
   padding-left:10px;
 }
+
 .Contact_data{
   padding-top:10px;
 }
@@ -141,52 +123,59 @@
   margin-top: 8px;
   margin-bottom: 14px;
 }
+
 #Email{
   width: 100%;
   margin-top: 8px;
   height: 30px;
   margin-bottom: 14px;
 }
+
 #Facebook{
   width: 100%;
   height: 30px;
   margin-top: 8px;
   margin-bottom: 14px;
 }
+
 #Twitter{
   width: 100%;
   height: 30px;
   margin-top: 8px;
   margin-bottom: 14px;
 }
+
 #Property{
   width: 100%;
   height: 30px;
   margin-top: 8px;
   margin-bottom: 14px;
 }
-.Introduction{
-}
+
 #Msg{
   width: 100%;
   height: 125px;
   margin-top: 8px;
   margin-bottom: 14px;
 }
-.File{
-    width: 100%;
-    height: auto;
+
+.file-upload {
+  display: none;
 }
-#File{
-    width: 160px;
-    height: 30px;
-    margin-top: 8px;
-    margin-bottom: 20px;
+
+#file{
+  width: 160px;
+  height: 30px;
+  color: #504065;
+  background-color: #F1F1F1;
+  margin: 10px;
 }
+
 .Condition{
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
+
 .Button{
   width: 100%;
   height: auto;
@@ -194,15 +183,17 @@
   justify-content: space-between;
   margin-top: 20px;
 }
+
 #Submit{
-      width: 160px;
-      height: 30px;
-      background-color: #504065;
-      color: #F1F1F1;
+  width: 160px;
+  height: 30px;
+  background-color: #504065;
+  color: #F1F1F1;
 }
+
 #Reset{
-      width: 160px;
-      height: 30px;
-      color: #504065;
-      background-color: #F1F1F1;
+  width: 160px;
+  height: 30px;
+  color: #504065;
+  background-color: #F1F1F1;
 }
