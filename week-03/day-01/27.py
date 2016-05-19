@@ -1,10 +1,10 @@
 z = 13
 
-if z < 10
+if z < 10:
     print("More!")
 
-elif z > 10
+elif z > 20:
     print("Less!")
 
-else
+else:
     print("Sweet!")
