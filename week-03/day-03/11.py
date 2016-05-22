@@ -14,4 +14,5 @@ def diamond(line):
     else:
         print("Only odd numbers, sorry!")
 
-diamond(15)
+diamond(10)
+diamond(31)

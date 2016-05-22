@@ -6,4 +6,4 @@ def tree(line):
         star += 2
         space -= 1
 
-tree(25)
+tree(88)
