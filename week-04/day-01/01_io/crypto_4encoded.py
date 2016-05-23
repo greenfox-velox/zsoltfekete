@@ -4,5 +4,6 @@ def decrypt(file_name):
     result = ''
     original = f.read()
     for x in original:
-        result += chr(x+1)
+        chr(n) = chr (x) -chr(1)
+        result += chr(n)
     return result
