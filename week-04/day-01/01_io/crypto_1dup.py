@@ -1,4 +1,4 @@
-# Create a method that decrypts the texts/duplicated_chars.txt
+ # Create a method that decrypts the texts/duplicated_chars.txt
 
 def decrypt(file_name):
     f = open(file_name)
