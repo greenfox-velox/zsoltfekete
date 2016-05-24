@@ -9,5 +9,4 @@ def decrypt(file_name):
             number += x
         else:
             number += chr(ord(x)-1)
-
     return number

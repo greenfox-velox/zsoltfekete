@@ -1,5 +1,4 @@
- # Create a method that decrypts texts/reversed_zen_lines.txt
-
+# Create a method that decrypts texts/reversed_zen_lines.txt
 def decrypt(file_name):
     f = open(file_name)
     result = ''

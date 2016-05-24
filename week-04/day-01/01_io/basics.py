@@ -1,5 +1,4 @@
 # 1. Create a method that reads all contents of a file when its name given as param
-
 def readfile(file_name):
     f = open(file_name, 'r')
     result = f.read()
