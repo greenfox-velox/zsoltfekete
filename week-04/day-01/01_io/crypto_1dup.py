@@ -2,9 +2,9 @@
 def decrypt(file_name):
     f = open(file_name)
     result= ''
-    original = f.readlines()
-    for y in original:
-            for x in range( 0, len(y), 2):
-                result += y[x]
+    file_lines = f.readlines()
     f.close()
+    for line in file_lines:
+            for index in range( 0, len(line), 2):
+                output += line[index]
     return result
