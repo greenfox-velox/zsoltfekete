@@ -14,11 +14,8 @@ def string(n):
 print(string('zuiezwtiexxitiut'))
 
 def string2(n):
-    if len(n) <= 1:
-        if n == 'x' :
-            return 'y'
-        else:
-            return n
+    if len(n) <= 0:
+        return n
     else:
         if n[0] == 'x' :
             return 'y'+ string2(n[1:])
@@ -26,3 +23,5 @@ def string2(n):
             return n[0] + string2(n[1:])
 
 print(string2('zuiezwtiexxitiut'))
+print(string2('x'))
+print(string2('f'))

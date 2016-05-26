@@ -5,6 +5,6 @@ def decrypt(file_name):
     file_lines = f.readlines()
     f.close()
     for line in file_lines:
-            for index in range( 0, len(line), 2):
-                output += line[index]
+        for index in range( 0, len(line), 2):
+            output += line[index]
     return result
