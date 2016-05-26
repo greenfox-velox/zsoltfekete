@@ -10,12 +10,15 @@ w = 300
 h = 300
 line_number = 20;
 
-def line(x,y,w,h):
+def green_line (x,y,w,h):
     green_line = canvas.create_line(x, y, w, h, fill='green')
+
+def purple_line (x,y,w,h):
+    purple_line = canvas.create_line(x, y, w, h, fill='purple')
 
 for i in range(0,line_number):
     x = i * w /(line_number-1)
     y = i * h /(line_number-1)
-    line(0, y, x, h)
-    line(x, 0, w, y)
+    green_line(0, y, x, h)
+    purple_line(x, 0, w, y)
 root.mainloop()
