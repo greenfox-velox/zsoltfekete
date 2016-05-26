@@ -1,30 +1,17 @@
 from tkinter import *
-
 root = Tk()
-
-canvas_width= 500
-canvas_height= 500
-
-canvas = Canvas(root, width= canvas_width, height= canvas_height)
+canvas = Canvas(root, width= 686, height= 686, bg= '#002530')
 canvas.pack()
 
-x = canvas_width/3
-y = canvas_height/3
-
-def box():
-    greenSquare = canvas.create_rectangle(1 * x, 0, 2 * x, 1 * y, fill ='green')
-    greenSquare = canvas.create_rectangle(0, 1 * y, 1 * x, 2 * y, fill ='green')
-    greenSquare = canvas.create_rectangle(2 * x, 1 * y, 3 * x, 2 * y, fill ='green')
-    greenSquare = canvas.create_rectangle(1 * x, 2 * y, 2 * x, 3 * y, fill ='green')
-
-root.mainloop()
-print(box())
-
-
-def fractal(n):
-    if n <= 1:
-        return box()
+def fractal(x,y,size):
+    canvas.create_rectangle(x, y, x + size, y + size ,outline= '#FFD300')
+    if size <= 5:
+        pass
     else:
-        return box()+fractal(x/3,y/3)
-
-print (fractal(50))
+        dim = size / 3
+        fractal(x + dim, y, dim)
+        fractal(x, y + dim, dim)
+        fractal(x + dim * 2, y + dim, dim)
+        fractal(x + dim, y + dim * 2, dim)
+fractal(10, 10, 666)
+root.mainloop()
