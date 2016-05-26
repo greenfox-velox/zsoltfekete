@@ -12,13 +12,14 @@ def tree(x1, y1, angle, length, number_of_repetitions):
     if number_of_repetitions <= 0:
         pass
     else:
-        tree( x2, y2, (angle - 25), length-10, number_of_repetitions - 1)
-        tree( x2, y2, (angle + 25), length-10, number_of_repetitions - 1)
+        tree( x2, y2, (angle - 25), length-5, number_of_repetitions - 1)
+        tree( x2, y2, (angle + 25), length-5, number_of_repetitions - 1)
+        tree( x2, y2, (angle), length, number_of_repetitions - 1)
 
 def draw_tree(x1, y1, length ,number_of_repetitions):
     angle = 270
     tree( x1, y1, angle, length, number_of_repetitions)
 
-draw_tree( 350, 600, 90, 10)
+draw_tree( 350, 600, 60, 8)
 
 root.mainloop()
