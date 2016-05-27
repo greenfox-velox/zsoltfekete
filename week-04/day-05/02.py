@@ -10,11 +10,12 @@ def hexagon(x, y ,size):
         pass
     else:
         dim = size / 3
+        h = h / 1.5
         hexagon(x, y, dim)
-        hexagon(x + size/3, y-h/1.5, dim)
-        hexagon(x + size, y-h/1.5, dim)
-        hexagon(x + 4 * size/3, y, dim)
-        hexagon(x + size, y+h/1.5, dim)
-        hexagon(x + size/3, y+h/1.5, dim)
+        hexagon(x + size / 3, y - h, dim)
+        hexagon(x + size, y - h, dim)
+        hexagon(x + 4 * size / 3, y, dim)
+        hexagon(x + size, y + h, dim)
+        hexagon(x + size / 3, y + h, dim)
 hexagon(100, 300 ,300)
 root.mainloop()
