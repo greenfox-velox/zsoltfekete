@@ -15,128 +15,123 @@ class Todo():
         print('-c Completes an task'+ '\n')
 
     def menu(self):
-        
-            if len(sys.argv) == 1 :
-                self.show_the_usermanual()
-            elif sys.argv[1] == '-l':
-                print(self.list_the_tasks())
-            elif sys.argv[1] == '-a':
-                self.add_task()
-            elif sys.argv[1] == '-r':
-                self.remove_task()
-            elif sys.argv[1] == '-c':
-                self.to_check()
-            else:
-                self.error_messages('unsuported')
+        self.is_the_file_exist(self.file_name)
+        if len(sys.argv) == 1 :
+            self.show_the_usermanual()
+        elif len(sys.argv) == 2 :
+            self.check_the_second_attribute()
+        elif len(sys.argv) == 3 :
+            self.check_the_third_attribute()
+        else:
+            self.error_messages('to_much')
 
-    def checked(self,element):
-        if element == 'False':
-            return('[ ]')
-        elif element == 'True':
-            return('[x]')
-
-    def list_the_tasks(self):
+    def is_the_file_exist (self,self_name):
         try:
-            f = open(self.file_name,)
-            list_file = csv.reader(f, delimiter=',')
-            number = 1
-            output = ''
-            if list_file == []:
-                f.close()
-                return 'No todos for today!' + '\n'
-            else:
-                for element in list_file:
-                    output += str(number)+' - '+str(self.checked(element[0]))+' '+element[1]+'\n'
-                    number +=1
-                f.close()
-                return output
+            f = open(self.file_name)
+            f.close()
         except FileNotFoundError:
             self.error_messages('filenot')
-            self.create_missing_file()
+            f = open(self.file_name,'w')
+            f.close()
 
-    def add_task(self):
-        try:
-            if len(sys.argv) == 2 :
-                self.error_messages('notask')
-            else:
-                f = open(self.file_name, 'a')
-                f.write(str(False)+','+sys.argv[2]+'\n')
-                f.close()
-        except FileNotFoundError:
-            self.error_messages('filenot')
-            self.create_missing_file()
-
-    def remove_task(self):
-        if len(sys.argv) == 2:
+    def check_the_second_attribute(self):
+        if sys.argv[1] == '-l':
+            print(self.list_the_tasks())
+        elif sys.argv[1] == '-a':
+            self.error_messages('notask')
+        elif sys.argv[1] == '-r':
             self.error_messages('noremove')
         else:
-            task_number = int(sys.argv[2])
-            f = open(self.file_name,'r')
-            list_file =f.readlines()
+            self.error_messages('index')
+
+    def check_the_third_attribute(self):
+        if sys.argv[1] == '-a':
+            self.add_task()
+        elif sys.argv[1] == '-r' or sys.argv[1] == '-c':
             try:
-                list_file.remove(list_file[task_number-1])
+                self.task_number = int(sys.argv[2])
+                if sys.argv[1] == '-r':
+                    self.remove_task()
+                elif sys.argv[1] == '-c':
+                    self.to_check()
             except ValueError:
                 self.error_messages('index')
             except IndexError:
                 self.error_messages('overindex')
-            except FileNotFoundError:
-                self.error_messages('filenot')
-                self.create_missing_file()
-            f.close()
-            f = open(self.file_name,'w')
-            for i in list_file:
-                f.write(i)
-            f.close()
-
-    def to_check(self):
-        if len(sys.argv) == 2:
-           self.error_messages('index')
         else:
-           try:
-               task_number = int(sys.argv[2])
-               f = open(self.file_name)
-               list_file = csv.reader(f, delimiter=',')
-               output = []
-               for i in list_file:
-                   output.append(i)
-               if output[task_number-1][0] == 'True':
-                    self.error_messages('checked')
-               else:
-                   output[task_number-1][0] = 'True'
-               f.close()
+            self.error_messages('unsuported')
 
-               f = open(self.file_name, 'w')
-               for i in output:
-                   f.write(i[0] + ',' + i[1] + '\n')
-               f.close()
-           except IndexError:
-                self.error_messages('overindex')
-           except ValueError:
-               self.error_messages('nocheck')
+    def list_the_tasks(self):
+        f = open(self.file_name)
+        list_file = list(csv.reader(f, delimiter=','))
+        number = 1
+        output = ''
+        if list_file == []:
+            f.close()
+            return 'No todos for today!' + '\n'
+        else:
+            for element in list_file:
+                output += str(number)+' - '+str(self.checked(element[0]))+' '+element[1]+'\n'
+                number +=1
+            f.close()
+            return output
 
-    def create_missing_file(self):
-        f = open(self.file_name,'a')
-        if sys.argv[1] == '-a':
-            f.write(sys.argv[2] + '\n')
+    def add_task(self):
+        f = open(self.file_name, 'a')
+        f.write(str(False)+','+sys.argv[2]+'\n')
         f.close()
 
-    def error_messages(self,type):
-        if type == 'index':
-            print('Unable to remove: Index is not a number !')
-        elif type == 'filenot':
-            print('File does not exists!, But we make a new one for you!')
-        elif type == 'overindex':
-            print('Unable to do: Index is out of bound!')
-        elif type == 'notask':
-            print('Unable to add: No task is provided!')
-        elif type == 'noremove':
-            print('Unable to remove:  No index is provided !')
-        elif type == 'nocheck':
-            print('Unable to check:  No index is provided !')
-        elif type == 'unsuported':
-            print('Unsupported argument')
-        elif type == 'checked':
-            print('It is already checked')
+    def remove_task(self):
+        f = open(self.file_name,'r')
+        list_file =f.readlines()
+        list_file.remove(list_file[self.task_number-1])
+        f.close()
+        f = open(self.file_name,'w')
+        for i in list_file:
+            f.write(i)
+        f.close()
 
-todo = Todo('todo4446666.csv')
+    def to_check(self):
+       f = open(self.file_name)
+       list_file = csv.reader(f, delimiter=',')
+       output = []
+       for i in list_file:
+           output.append(i)
+       if output[self.task_number-1][0] == 'True':
+            self.error_messages('checked')
+       else:
+           output[self.task_number-1][0] = 'True'
+       f.close()
+       f = open(self.file_name, 'w')
+       for i in output:
+           f.write(i[0] + ',' + i[1] + '\n')
+       f.close()
+
+    def checked(self,element):
+        if element == 'False':
+            return('[ ]')
+        else:
+            return('[x]')
+
+    def error_messages(self,msgtype):
+        if msgtype == 'index':
+            print('Unable to remove: Index is not a number!')
+        elif msgtype == 'filenot':
+            print('File does not exists!, But we make a new one for you!')
+        elif msgtype == 'overindex':
+            print('Unable to do: Index is out of bound!')
+        elif msgtype == 'notask':
+            print('Unable to add: No task is provided!')
+        elif msgtype == 'noremove':
+            print('Unable to remove:  No index is provided !')
+        elif msgtype == 'nocheck':
+            print('Unable to check:  No index is provided !')
+        elif msgtype == 'unsuported':
+            print('Unsupported argument')
+        elif msgtype == 'checked':
+            print('It is already checked!')
+        elif msgtype == 'to_much':
+            print('Please type only one command at the same time!')
+
+todo = Todo('todo.csv')
 todo.menu()
