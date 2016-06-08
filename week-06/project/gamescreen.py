@@ -1,5 +1,6 @@
 from maps import *
 from tile import *
+from character import *
 
 class Gamescreen():
     def __init__(self,canvas):
@@ -20,3 +21,17 @@ class Gamescreen():
     def draw_gamescreen(self):
         for i in self.M:
             i.draw()
+
+class Controller():
+    def __init__(self, joey):
+        self.joey = joey
+
+    def hero_move(self,event):
+        if event.keysym == 'Up':
+            self.joey.hero_up()
+        elif event.keysym == 'Down':
+            self.joey.hero_down()
+        elif event.keysym == 'Right':
+            self.joey.hero_right()
+        elif event.keysym == 'Left':
+            self.joey.hero_left()
