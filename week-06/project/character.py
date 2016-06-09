@@ -3,24 +3,28 @@ from maps import *
 import random
 
 class Character():
-    def __init__(self,row,column,canvas):
+    def __init__(self, row, column):
         self.row = row
         self.column = column
-        self.canvas =canvas
         self.size = 72
-        self.dice = self.roll_dice()
+        self.dice =random.randint(1,6)
         self.zero = 5
 
-    def draw_image(self,picture):
-        self.canvas.create_image( self.zero + self.row * self.size , self.zero + self.column * self.size , image=picture,anchor = NW)
+    def draw_image(self, picture, canvas):
+        canvas.create_image( self.zero + self.row * self.size , self.zero + self.column * self.size , image=picture,anchor = NW)
 
-    def roll_dice(self):
-            random_dice = random.randint(1,6)
-            return random_dice
+    def hurt(self,strike_value):
+        self.curHP=self.curHP-strike_value
+        if self.curHP < 0 :
+            self.die()
+
+    def die(self):
+        self.row = 11
+        self.column = 11
 
 class Hero(Character):
-    def __init__(self,row,column,canvas,gameboard):
-        super().__init__(row,column,canvas)
+    def __init__(self,row,column):
+        super().__init__(row,column)
         self.photo_hero_movement = PhotoImage(file = 'picture/herodown.gif')
         self.gameboard = gameboard
         self.level = 1
@@ -29,56 +33,54 @@ class Hero(Character):
         self.DP =self.dice+self.dice
         self.SP = 5 + self.dice
 
-    def draw(self):
-        return self.draw_image(self.photo_hero_movement)
-
-    def check_the_next_tile(self, next_x, next_y):
-        try:
-            if self.gameboard[self.column+next_y][self.row+next_x] == 0 and (self.column+next_y) >= 0 and self.row+next_x >= 0:
-                return True
-        except IndexError:
-            return False
+    def draw_character(self, canvas):
+        self.draw_image(self.photo_hero_movement, canvas)
 
     def hero_down(self):
+        self.turn_down()
+        self.column += 1
+
+    def turn_down(self):
         self.photo_hero_movement = PhotoImage(file = 'picture/herodown.gif')
-        if self.check_the_next_tile(0, 1):
-            self.column += 1
-        self.draw()
 
     def hero_up(self):
+        self.turn_up()
+        self.column -= 1
+
+    def turn_up(self):
         self.photo_hero_movement = PhotoImage(file = 'picture/heroup.gif')
-        if self.check_the_next_tile(0, -1):
-            self.column -= 1
-        self.draw()
 
     def hero_right(self):
+        self.turn_right()
+        self.row += 1
+
+    def turn_right(self):
         self.photo_hero_movement = PhotoImage(file = 'picture/heroright.gif')
-        if self.check_the_next_tile(1, 0):
-            self.row += 1
-        self.draw()
 
     def hero_left(self):
+        self.turn_left()
+        self.row -= 1
+
+    def turn_left(self):
         self.photo_hero_movement = PhotoImage(file = 'picture/heroleft.gif')
-        if self.check_the_next_tile(-1, 0):
-            self.row -= 1
-        self.draw()
+
 
 class Monster(Character):
-    def __init__(self,canvas,row,column):
-        super().__init__(canvas,row,column)
-        self.photo_monster = PhotoImage(file = 'picture/skeleton.gif')
+    def __init__(self,row,column):
+        super().__init__(row,column)
         self.level = 1
         self.maxHP = 2 * self.level * self.dice
         self.curHP = self.maxHP
         self.DP = self.level / 2 * self.dice
         self.SP = self.level + self.dice
+        self.photo_monster = PhotoImage(file = 'picture/skeleton.gif')
 
-    def draw(self):
-        self.draw_image(self.photo_monster)
+    def draw_character(self, canvas):
+        self.draw_image(self.photo_monster, canvas)
 
 class Boss(Character):
-    def __init__(self,canvas,row,column):
-        super().__init__(canvas,row,column)
+    def __init__(self,row,column):
+        super().__init__(row,column)
         self.level = 1
         self.maxHP = (2 * self.level + 1) * self.dice
         self.curHP = self.maxHP
@@ -86,5 +88,5 @@ class Boss(Character):
         self.SP = self.level * (1+ self.dice)
         self.photo_boss = PhotoImage(file = 'picture/boss.gif')
 
-    def draw(self):
-        self.draw_image(self.photo_boss)
+    def draw_character(self, canvas):
+        self.draw_image(self.photo_boss, canvas)
