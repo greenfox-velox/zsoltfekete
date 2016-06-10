@@ -15,7 +15,10 @@ class Game():
         self.skeleton_3 = Monster(3,4)
         self.boss = Boss(9,9)
         self.stat = Statistic(self.joey,self.skeleton_1,self.skeleton_2,self.skeleton_3,self.boss,self.canvas)
-        self.monster_position =[(self.boss.row,self.boss.column),(self.skeleton_1.row,self.skeleton_1.column),(self.skeleton_2.row,self.skeleton_2.column),(self.skeleton_3.row,self.skeleton_3.column)]
+        self.modify_list()
+
+    def modify_list(self):
+        self.monster_list =[(self.boss.row,self.boss.column),(self.skeleton_1.row,self.skeleton_1.column),(self.skeleton_2.row,self.skeleton_2.column),(self.skeleton_3.row,self.skeleton_3.column)]
 
     def draw_all(self):
         self.game_map.draw_tile(self.canvas)
@@ -42,73 +45,74 @@ class Game():
         elif event.keysym == 'space':
             self.start_the_battle()
 
+
     def start_the_battle(self):
-        if self.game_map.is_this_tile_occupied(self.joey.row,self.joey.column,self.monster_position):
-            self.strike(self.game_map.get_the_enemy(self.joey.row,self.joey.column,self.monster_position))
+        self.modify_list()
+        if self.game_map.is_this_tile_occupied(self.joey.row,self.joey.column,self.monster_list):
+            self.strike(self.game_map.get_the_enemy(self.joey.row,self.joey.column,self.monster_list))
 
     def strike(self,attacker):
-        if attacker == 'self.boss':
-            self.stat.draw_skeleton_boss
+        if attacker == 'boss':
+            self.stat.draw_boss_stat(True)
             self.strike_1=self.joey.SP+self.dice+self.dice
             self.strike_2=self.boss.SP+self.dice+self.dice
             if self.strike_1 > self.boss.DP:
-                self.boss.hurt(self.strike_1)
+                self.boss.hurt_monster(self.strike_1,self.boss,self.canvas)
             if self.strike_2+self.dice+self.dice > self.joey.DP:
-                self.joey.hurt(self.strike_2)
+                self.joey.hurt_hero(self.strike_2,self.canvas)
 
-
-        elif attacker == 'self.skeleton_1':
-            self.stat.draw_skeleton_stat_1()
+        elif attacker == 'skeleton_1':
+            self.stat.draw_skeleton_stat_1(True)
             self.strike_1=self.joey.SP+self.dice+self.dice
             self.strike_2=self.skeleton_1.SP+self.dice+self.dice
             if self.strike_1 > self.skeleton_1.DP:
-                self.skeleton_1.hurt(self.strike_1)
+                self.skeleton_1.hurt_monster(self.strike_1,self.skeleton_1,self.canvas)
             if self.strike_2+self.dice+self.dice > self.joey.DP:
-                self.joey.hurt(self.strike_2)
+                self.joey.hurt_hero(self.strike_2,self.canvas)
 
-
-        elif attacker == 'self.skeleton_2':
-            self.stat.draw_skeleton_stat_2()
+        elif attacker == 'skeleton_2':
+            self.stat.draw_skeleton_stat_2(True)
             self.strike_1=self.joey.SP+self.dice+self.dice
             self.strike_2=self.skeleton_2.SP+self.dice+self.dice
-            if self.strike_1 > self.skeleton_2.self.DP:
-                self.skeleton_2.hurt(self.strike_1)
+            if self.strike_1 > self.skeleton_2.DP:
+                self.skeleton_2.hurt_monster(self.strike_1,self.skeleton_2,self.canvas)
             if self.strike_2+self.dice+self.dice > self.joey.DP:
-                self.joey.hurt(self.strike_2)
+                self.joey.hurt_hero(self.strike_2,self.canvas)
 
-        elif attacker == 'self.skeleton_3':
-            self.stat.draw_skeleton_stat_3()
+        elif attacker == 'skeleton_3':
+            self.stat.draw_skeleton_stat_3(True)
             self.strike_1=self.joey.SP+self.dice+self.dice
             self.strike_2=self.skeleton_3.SP+self.dice+self.dice
             if self.strike_1 > self.skeleton_3.DP:
-                self.skeleton_3.hurt(self.strike_1)
+                self.skeleton_3.hurt_monster(self.strike_1,self.skeleton_3,self.canvas)
             if self.strike_2+self.dice+self.dice > self.joey.DP:
-                self.joey.hurt(self.strike_2)
+                self.joey.hurt_hero(self.strike_2,self.canvas)
 
+        self.draw_all()
 
     def move_up(self):
-        if self.game_map.is_this_move_possible(self.joey.row,self.joey.column,self.joey.row,self.joey.column-1,self.monster_position):
+        if self.game_map.is_this_move_possible(self.joey.row,self.joey.column,self.joey.row,self.joey.column-1,self.monster_list):
             self.joey.hero_up()
         else:
             self.joey.turn_up()
         self.joey.draw_character(self.canvas)
 
     def move_down(self):
-        if self.game_map.is_this_move_possible(self.joey.row,self.joey.column,self.joey.row,self.joey.column+1,self.monster_position):
+        if self.game_map.is_this_move_possible(self.joey.row,self.joey.column,self.joey.row,self.joey.column+1,self.monster_list):
             self.joey.hero_down()
         else:
             self.joey.turn_down()
         self.joey.draw_character(self.canvas)
 
     def move_right(self):
-        if self.game_map.is_this_move_possible(self.joey.row,self.joey.column,self.joey.row+1,self.joey.column,self.monster_position):
+        if self.game_map.is_this_move_possible(self.joey.row,self.joey.column,self.joey.row+1,self.joey.column,self.monster_list):
             self.joey.hero_right()
         else:
             self.joey.turn_right()
         self.joey.draw_character(self.canvas)
 
     def move_left(self):
-        if self.game_map.is_this_move_possible(self.joey.row,self.joey.column,self.joey.row-1,self.joey.column,self.monster_position):
+        if self.game_map.is_this_move_possible(self.joey.row,self.joey.column,self.joey.row-1,self.joey.column,self.monster_list):
             self.joey.hero_left()
         else:
             self.joey.turn_left()

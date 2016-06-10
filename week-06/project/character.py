@@ -13,23 +13,14 @@ class Character():
     def draw_image(self, picture, canvas):
         canvas.create_image( self.zero + self.row * self.size , self.zero + self.column * self.size , image=picture,anchor = NW)
 
-    def hurt(self,strike_value):
-        self.curHP=self.curHP-strike_value
-        if self.curHP < 0 :
-            self.die()
-
-    def die(self):
-        self.row = 11
-        self.column = 11
-
 class Hero(Character):
     def __init__(self,row,column):
         super().__init__(row,column)
         self.photo_hero_movement = PhotoImage(file = 'picture/herodown.gif')
         self.gameboard = gameboard
         self.level = 1
-        self.maxHP = 20 + self.dice + self.dice + self.dice
-        self.curHP = 30
+        self.maxHP = (20 + self.dice + self.dice + self.dice)
+        self.curHP = self.maxHP
         self.DP =self.dice+self.dice
         self.SP = 5 + self.dice
 
@@ -64,6 +55,11 @@ class Hero(Character):
     def turn_left(self):
         self.photo_hero_movement = PhotoImage(file = 'picture/heroleft.gif')
 
+    def hurt_hero(self,strike_value,canvas):
+        self.curHP= self.curHP - strike_value
+        if self.curHP < 0 :
+            canvas.delete('all')
+            canvas.create_text(200,200,text='Game over',fill='red',font=('Palatino',55),justify='center')
 
 class Monster(Character):
     def __init__(self,row,column):
@@ -78,6 +74,15 @@ class Monster(Character):
     def draw_character(self, canvas):
         self.draw_image(self.photo_monster, canvas)
 
+    def hurt_monster(self,strike_value,canvas,enemy):
+        self.curHP = self.curHP-strike_value
+        if self.curHP < 0 :
+            self.die(canvas,enemy)
+
+    def die(self,canvas,enemy):
+        self.row = -1
+        self.column = -1
+
 class Boss(Character):
     def __init__(self,row,column):
         super().__init__(row,column)
@@ -90,3 +95,12 @@ class Boss(Character):
 
     def draw_character(self, canvas):
         self.draw_image(self.photo_boss, canvas)
+
+    def hurt_monster(self,strike_value,canvas,enemy):
+        self.curHP = self.curHP-strike_value
+        if self.curHP < 0 :
+            self.die(canvas,enemy)
+
+    def die(self,canvas,enemy):
+        self.row = -1
+        self.column = -1

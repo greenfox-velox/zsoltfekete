@@ -52,17 +52,16 @@ class Map():
             return True
 
     def is_this_move_possible(self,hero_x,hero_y,next_x,next_y,monster_list):
-        if self.is_this_tile_occupied(hero_x,hero_y,monster_list) == False and self.is_the_next_tile_floor(next_x,next_y):
-            return True
+        return self.is_this_tile_occupied(hero_x,hero_y,monster_list) == False and self.is_the_next_tile_floor(next_x,next_y)
 
     def  get_the_enemy(self, hero_x, hero_y, monster_list):
         if hero_x == monster_list[0][0] and hero_y == monster_list[0][1] :
-            return 'self.boss'
+            return 'boss'
         elif hero_x == monster_list[1][0] and hero_y == monster_list[1][1] :
-            return 'self.skeleton_1'
+            return 'skeleton_1'
         elif hero_x == monster_list[2][0] and hero_y == monster_list[2][1] :
-            return 'self.skeleton_2'
+            return 'skeleton_2'
         elif hero_x == monster_list[3][0] and hero_y == monster_list[3][1] :
-            return 'self.skeleton_3'
+            return 'skeleton_3'
         else:
             return False
