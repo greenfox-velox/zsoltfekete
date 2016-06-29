@@ -1,3 +1,4 @@
+'use strict'
   // 1. Alert the content of the header.
   // 2. Write the content of the first paragraph to the console.
   // 3. Alert the content of the second paragraph.

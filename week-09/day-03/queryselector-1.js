@@ -1,3 +1,4 @@
+'use strict'
 // 1. store the element that says 'The King' in the 'king' variable.
 // console.log it.
 // 2. store the element that contains the text 'The Conceited Man'
