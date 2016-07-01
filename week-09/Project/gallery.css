@@ -1,0 +1,91 @@
+body{
+  margin: 0 auto;
+  background-image: url("icons/background.jpg");
+}
+
+h1{
+  text-align: center;
+  color:#FFA500;
+  margin-top: 50px;
+}
+
+h4{
+  margin-top: 45px;
+  text-align: center;
+  color:#FFA500;
+  font-size: 35px;
+  font-weight: normal;
+}
+
+.main_picture_container{
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-family: "Palatino Linotype", serif;
+
+}
+
+button{
+  background-color: Transparent;
+  border: none;
+  cursor:pointer;
+  outline:none;
+}
+
+.left{
+  position: relative;
+  top : 150px;
+  left: 200px;
+}
+
+.right{
+  position: relative;
+  top : 150px;
+  right: 200px;
+}
+
+.left_small{
+  position: relative;
+  top : 50px;
+  left: 30px;
+}
+
+.right_small{
+  position: relative;
+  top : 50px;
+  right: 30px;
+}
+
+.big_buttons{
+  height: 100px
+}
+
+.small_buttons{
+  height: 50px
+}
+
+.main_container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_thumbnails_container{
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_picture{
+  height: 400px;
+}
+
+.small_picture{
+  height: 150px;
+  margin-top: 2px
+}
+
+.small_picture:hover{
+  height: 170px;
+  border: solid #FFA500;
+
+}
