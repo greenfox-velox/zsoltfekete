@@ -9,21 +9,24 @@
 // and it should call the callback with the counted number
 // if there is some error it should call the callback with the error
 //
+
 var fs = require('fs');
 
-function countLetter (fileName, letter, callback) {
+function letterCount(fileName, letter, callback) {
   fs.readFile(fileName,function(error, content){
     if (error) {
-      return callback(err);
+      return callback(error);
     }
-    var counter = 0
-    callback(null, String(content).split('').forEach(function(e){
-    if (e === letter) {
-      counter++;
-    }}));
-  callback(null, counter);
-});
+    var counter = 0;
+    String(content).split('').forEach(function(e) {
+      if (e === letter) {
+        counter++;
+      }
+    });
+    callback(null, counter);
+  });
 }
-countLetter ( 'apple.txt', 'a', function(error,count) {
-  console.log(error, count);
-});
+
+letterCount('apple.txt', 'a', function(error, c) {
+  console.log(error, c);
+})
